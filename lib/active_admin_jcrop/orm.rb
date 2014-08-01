@@ -22,17 +22,3 @@ module ActiveAdminJcrop
     end
   end
 end
-
-if defined?(::ActiveRecord)
-  ::ActiveRecord::Base.send(:include, ::ActiveAdminJcrop::Orm::Extension)
-end
-
-if defined?(::Mongoid)
-  module Mongoid
-    module Document
-      def self.included(base)
-        base.send(:include, ::ActiveAdminJcrop::Orm::Extension)
-      end
-    end
-  end
-end
